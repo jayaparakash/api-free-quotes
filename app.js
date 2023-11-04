@@ -1,12 +1,13 @@
 
 function fetchQuote() {
- let randomQuote = Math.floor(Math.random()* 1000)   
+ let randomQuote = Math.floor(Math.random()*16)   
 
 fetch("https://type.fit/api/quotes")
   .then((response)=> {
-    return response.json();
+    return  response.json() 
     console.log(response.json());
   })
+
   .then((data)=> {
     console.log(data[randomQuote].text);
     document.getElementById('quote').innerText= data[randomQuote].text
